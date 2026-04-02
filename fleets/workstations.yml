@@ -181,9 +181,9 @@ software:
     #   labels_include_any:
     #     - "x86-based Windows hosts"
 
-  packages: # Custom packages (if any)
-    # macOS custom packages
-    # …
+  packages:
+    path: ../platforms/macos/software/santa.yml
+    path: ../platforms/macos/software/privileges.yml
 
     # Windows custom packages
     # …
