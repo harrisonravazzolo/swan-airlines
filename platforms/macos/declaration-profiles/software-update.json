@@ -1,0 +1,10 @@
+{
+	"Type": "com.apple.configuration.softwareupdate.enforcement.specific",
+	"Identifier": "com.swan-airlines.config.softwareupdate",
+	"Payload": {
+		"TargetOSVersion": "26.4",
+		"TargetBuildVersion": "25E246",
+		"TargetLocalDateTime": "2026-07-12T13:50:00",
+		"DetailsURL": "https://www.apple.com"
+	}
+}
