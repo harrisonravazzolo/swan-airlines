@@ -1,0 +1,25 @@
+- name: DEX - Network experience - Wi-Fi signal quality
+  description: Wi-Fi connection signal strength and quality metrics. Poor Wi-Fi directly impacts cloud application performance and user experience.
+  query: |
+    SELECT
+        interface,
+        rssi,
+        noise,
+        (rssi - noise) AS signal_to_noise_ratio,
+        channel,
+        channel_width,
+        channel_band,
+        transmit_rate,
+        security_type,
+        CASE
+          WHEN rssi >= -50 THEN 'excellent'
+          WHEN rssi >= -60 THEN 'good'
+          WHEN rssi >= -70 THEN 'fair'
+          WHEN rssi >= -80 THEN 'weak'
+          ELSE 'very_weak'
+        END AS signal_quality
+      FROM wifi_status
+  platform: darwin
+  automations_enabled: true
+  logging: snapshot
+  interval: 600
